@@ -17,6 +17,13 @@
         "backgroundColor": "#ffffff"
       }
     },
+    "build": {
+      "production-apk": {
+        "android": {
+          "buildType": "apk"
+        }
+      }
+    },
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -33,26 +40,25 @@
           "enableFullScreenImage_legacy": true
         }
       ],
+
       [
-        "expo-sqlite",
+        "expo-font",
         {
-          "enableFTS": true,
-          "useSQLCipher": true,
-          "android": {
-            "enableFTS": false,
-            "useSQLCipher": false
-          },
-          "ios": {
-            "customBuildFlags": [
-              "-DSQLITE_ENABLE_DBSTAT_VTAB=1 -DSQLITE_ENABLE_SNAPSHOT=1"
-            ]
-          }
+          "fonts": ["./assets/images/icon.png"]
         }
-      ],
-      ["expo-font", { "fonts": ["./assets/images/icon.png"] }]
+      ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "e54a8fc7-4f2e-4abc-9ea7-8ba616d74ea8"
+      }
+    },
+    "owner": "bogye"
   }
 }
